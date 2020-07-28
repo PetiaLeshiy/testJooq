@@ -110,7 +110,7 @@
 
                             <includes>pet</includes>
                             <excludes></excludes>
-                            <inputSchema></inputSchema>
+                            <inputSchema>public</inputSchema>
                         </database>
 
                         <target>
