@@ -1,6 +1,6 @@
 dataBaseSource:
   driver: org.postgresql.Driver
-  jdbc-url: jdbc:postgresql://localhost:5432/testdb
+  jdbc-url: jdbc:postgresql://localhost:5432/test1
   username: postgres
-  password: pas
+  password: password
 

@@ -18,33 +18,18 @@
     </properties>
     <dependencies>
 
-        <!--            Стартер веб-приложения-->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-            <version>2.2.5.RELEASE</version>
-        </dependency>
-
-        <!--           коннект к БД-->
         <dependency>
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
             <version>42.2.11</version>
         </dependency>
 
-        <!--даем возможность управлять спрингу JOOQ-ом-->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-jooq</artifactId>
-            <version>2.2.2.RELEASE</version>
-        </dependency>
-
-
         <dependency>
             <groupId>org.jooq</groupId>
             <artifactId>jooq</artifactId>
             <version>${org.jooq.version}</version>
         </dependency>
+
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
@@ -74,7 +59,6 @@
                 </executions>
             </plugin>
 
-            <!--            плагн для создания файлов jooq-->
             <plugin>
                 <groupId>org.jooq</groupId>
                 <artifactId>jooq-codegen-maven</artifactId>
@@ -100,15 +84,15 @@
                             <name>org.jooq.meta.postgres.PostgresDatabase</name>
                             <forcedTypes>
                                 <forcedType>
-                                    <userType>org.test.model.TypeAnimal</userType>
+                                    <userType>org.test.model.TestType</userType>
                                     <enumConverter>true</enumConverter>
-                                    <includeExpression>pet.typeanimal</includeExpression>
+                                    <includeExpression>testtable.type</includeExpression>
                                     <includeTypes>.*</includeTypes>
                                     <nullability>ALL</nullability>
                                 </forcedType>
                             </forcedTypes>
 
-                            <includes>pet</includes>
+                            <includes>testtable</includes>
                             <excludes></excludes>
                             <inputSchema>public</inputSchema>
                         </database>
@@ -120,6 +104,7 @@
                     </generator>
                 </configuration>
             </plugin>
+
         </plugins>
     </build>
 </project>
